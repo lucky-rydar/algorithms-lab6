@@ -17,7 +17,7 @@
    <string notr="true">background-color: #5c3434; color: white;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <layout class="QHBoxLayout" name="horizontalLayout_8">
     <item>
      <widget class="QGroupBox" name="groupBox_3">
       <property name="title">
@@ -43,6 +43,24 @@
         </layout>
        </item>
        <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>points:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <spacer name="verticalSpacer_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -50,7 +68,7 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>438</height>
+           <height>410</height>
           </size>
          </property>
         </spacer>
@@ -70,6 +88,18 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_3">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton::disabled {
+	background-color: #997373;
+	color: #d1d1d1;
+}</string>
+         </property>
          <property name="text">
           <string>Ai turn</string>
          </property>
@@ -103,6 +133,42 @@
         </layout>
        </item>
        <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>points:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>moves available</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <spacer name="verticalSpacer_3">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -110,7 +176,7 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>106</width>
-           <height>184</height>
+           <height>162</height>
           </size>
          </property>
         </spacer>
@@ -140,14 +206,14 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>80</width>
-             <height>80</height>
+             <width>70</width>
+             <height>70</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>80</width>
-             <height>80</height>
+             <width>70</width>
+             <height>70</height>
             </size>
            </property>
            <property name="font">
@@ -177,14 +243,14 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>80</width>
-             <height>80</height>
+             <width>70</width>
+             <height>70</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>80</width>
-             <height>80</height>
+             <width>70</width>
+             <height>70</height>
             </size>
            </property>
            <property name="font">
@@ -227,13 +293,25 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>106</width>
-           <height>183</height>
+           <height>161</height>
           </size>
          </property>
         </spacer>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton::disabled {
+	background-color: #997373;
+	color: #d1d1d1;
+}</string>
+         </property>
          <property name="text">
           <string>drop</string>
          </property>
@@ -247,51 +325,67 @@
       <property name="title">
        <string>moves</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QRadioButton" name="radioButton">
-             <property name="text">
-              <string>muliple</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioButton_2">
-             <property name="text">
-              <string>divide</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QGroupBox" name="groupBox_4">
+           <property name="title">
+            <string>operation</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QRadioButton" name="radioButton">
+              <property name="text">
+               <string>muliple</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButton_2">
+              <property name="text">
+               <string>divide</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QRadioButton" name="radioButton_5">
-             <property name="text">
-              <string>one</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioButton_4">
-             <property name="text">
-              <string>two</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioButton_3">
-             <property name="text">
-              <string>three</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QGroupBox" name="groupBox_5">
+           <property name="title">
+            <string>number</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QRadioButton" name="radioButton_5">
+              <property name="text">
+               <string>two</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButton_4">
+              <property name="text">
+               <string>three</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButton_3">
+              <property name="text">
+               <string>four</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </item>
         </layout>
        </item>
@@ -303,7 +397,7 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>370</height>
+           <height>325</height>
           </size>
          </property>
         </spacer>
@@ -323,6 +417,18 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_2">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton::disabled {
+	background-color: #997373;
+	color: #d1d1d1;
+}</string>
+         </property>
          <property name="text">
           <string>get</string>
          </property>
