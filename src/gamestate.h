@@ -39,7 +39,7 @@ public:
 	void swapAllowed();
 	void checkForThirteenLike();
 public:
-	explicit GameState(int moves = 10, QObject *parent = nullptr);
+	explicit GameState(int moves = 10);
 
 	void clearState();
 	DiceState drop();
@@ -52,10 +52,7 @@ public:
 	void setMoves(int newMoves);
 	int getMoves();
 
-//signals:
-//	void scoreUpdated(int score);
-//	void pointsUpdated(int points);
-//	void movesChanged(int moves);
+	GameState &operator=(const GameState& other);
 };
 
 #endif // GAMESTATE_H

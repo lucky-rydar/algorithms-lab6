@@ -38,9 +38,19 @@ void GameState::checkForThirteenLike()
 	}
 }
 
-GameState::GameState(int moves, QObject *parent)
+GameState::GameState(int moves)
 {
 	setMoves(moves);
+}
+
+void GameState::clearState()
+{
+	this->m_score = 0;
+	this->m_lastResult = 0;
+	this->m_moves = 10;
+	this->m_points = 0;
+	this->m_dropsAllowed = 2;
+	this->m_chooseOptionAllowed = false;
 }
 
 DiceState GameState::drop()

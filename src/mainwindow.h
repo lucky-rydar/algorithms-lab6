@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include "gamestate.h"
+#include "ai.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,5 +32,6 @@ private:
 
 private:
 	void updateFront();
+	void runCompareResults();
 };
 #endif // MAINWINDOW_H

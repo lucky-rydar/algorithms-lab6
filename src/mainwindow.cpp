@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 	ui->pushButton_2->setEnabled(false);
 	ui->pushButton_3->setEnabled(false);
+	ui->aiLogsEdit->setReadOnly(true);
 }
 
 MainWindow::~MainWindow()
@@ -73,8 +74,28 @@ void MainWindow::on_pushButton_2_clicked() // get button
 
 void MainWindow::on_pushButton_3_clicked() // ai turn button
 {
-	ui->pushButton_2->setEnabled(false);
-	ui->pushButton->setEnabled(false);
+	int moves = gs_ai.m_moves;
+	for(int i = 0; i < moves/2; i++)
+	{
+		Ai::Step doneStep;
+		doneStep = Ai::doNextStep(gs_ai);
+		gs_ai.chooseOption(doneStep.move.op, doneStep.move.num);
+
+		ui->label_4->setText(QString::number(gs_ai.m_score));
+		ui->label_10->setText(QString::number(gs_ai.m_points));
+
+		QString firstDrop = QString::number(doneStep.fisrtDrop.first) + " " + QString::number(doneStep.fisrtDrop.second);
+		QString secondDrop = QString::number(doneStep.secondDrop.first) + " " + QString::number(doneStep.secondDrop.second);
+
+		Operation op = doneStep.move.op;
+		QString opStr = (op == Multiple ? "*" : "/");
+		QString numStr = QString::number(int(doneStep.move.num));
+		ui->aiLogsEdit->append("drop1: " + firstDrop + " drop2: " + secondDrop + " op: " + opStr + numStr + "\n");
+	}
+
+	ui->pushButton_3->setEnabled(false);
+
+	runCompareResults();
 }
 
 void MainWindow::updateFront()
@@ -82,5 +103,10 @@ void MainWindow::updateFront()
 	ui->label_2->setText(QString::number(gs_player.m_score)); // score
 	ui->label_8->setText(QString::number(gs_player.m_points)); // points
 	ui->label_12->setText(QString::number(gs_player.m_moves)); // moves
+}
+
+void MainWindow::runCompareResults()
+{
+	QMessageBox::information(this, "Game end", gs_player.m_points > gs_ai.m_points ? "Player won" : (gs_player.m_points < gs_ai.m_points) ? "Ai won" : "Equal points");
 }
 

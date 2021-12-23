@@ -14,6 +14,7 @@ SOURCES += \
     src/mainwindow.cpp
 
 HEADERS += \
+	src/ai.h \
     src/gamestate.h \
     src/mainwindow.h
 
